@@ -1,9 +1,12 @@
 /**
-* @author Jose Manuel Palau Alegria
+* @author Alicia Garrido Alenda
 *
-Se crea un objeto de tipo DiccA, se invoca su método leeDiccA sobre un diccionario 
-sin palabras repetidas de ningún tipo. Se invoca muestraDicc para que muestre el
- diccionario original indicándole cada vez un número de líneas y un idioma
+* Se crea un objeto de tipo DiccA, se invoca su metodo leeDiccA
+* con un diccionario de unas 50 palabras, con alguna palabra repetida
+* literalmente. Se invoca su metodo insertaPalabra con palabras que ya
+* estan en el diccionario pero tienen acepciones nuevas, que no estan 
+* en el diccionario o bien que son repetidas sin acepciones nuevas.
+* Se invoca muestraDiccA para que lo muestre completo en orden alfabetico.
 */
 public class p05 {
   /**
@@ -56,7 +59,7 @@ public class p05 {
        System.out.println(agregadas[i].getOrigen()+" insertada? -> "+flag);
       }
       System.out.println("============ DICCIONARIO MODIFICADO ===========");
-      diccio.muestraDiccA(1, 8, 'P');
+      diccio.muestraDiccA(1);
     }
     else
      System.out.println("Forma uso: java p05 p05.dic");

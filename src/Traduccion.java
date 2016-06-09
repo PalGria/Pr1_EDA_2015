@@ -32,7 +32,8 @@ public class Traduccion {
 			//y que de un ArrayIndexOutOfBounds
 			if(i<4){
 				if(traduccion[i+1]!=null && !traduccion[i].isEmpty()){
-					resultado=resultado+"/";
+					if(!traduccion[i+1].isEmpty())
+						resultado=resultado+"/";
 				}
 			}
 		}
