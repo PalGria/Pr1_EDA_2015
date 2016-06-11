@@ -97,17 +97,17 @@ public class Bilingue {
 
 				for (int k = 0;k<texto.length;k++){  
 					if(dic.traduce1(texto[k],l)!=null){ // si no hay nulos
-						salida = salida + separadores[k] + dic.traduce1(texto[k], l) ;
+						salida = salida + separadores[k+1] + dic.traduce1(texto[k], l) ;
 						//
 
 					}
 					else{ //si no encuentro la traducción imprimo un guión
-						salida = salida + "-" + separadores[k];
+						salida = salida + "-" + separadores[k+1];
 						fallos++; //y aumento fallos
 					}
 					i++;
 				}
-				System.out.println(salida); //devuelvo el texto original traducido
+				//System.out.println(salida); //devuelvo el texto original traducido
 			}
 			if(i!=0)
 				System.out.print((i-fallos)*100/i + "%"); // y los fallos cometidos en porcentaje -> Fallos * 100 dividido entre las veces que he hecho el bucle
@@ -116,7 +116,7 @@ public class Bilingue {
 		}
 
 		else{
-			System.out.println("Te faltan argumentos");
+			System.out.println("El programa requiere los siguientes argumentos: Dic Texto Idioma");
 		}
 	}
 }
