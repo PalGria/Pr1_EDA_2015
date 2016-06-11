@@ -36,7 +36,6 @@ public class Bilingue {
 
 				linea=lectura.readLine(); //leemos el documento línea a línea
 
-				System.out.println(texto[i]);
 
 				i++;
 
@@ -97,17 +96,17 @@ public class Bilingue {
 
 				for (int k = 0;k<texto.length;k++){  
 					if(dic.traduce1(texto[k],l)!=null){ // si no hay nulos
-						salida = salida + separadores[k+1] + dic.traduce1(texto[k], l) ;
+						salida = salida + dic.traduce1(texto[k], l) + separadores[k+1] ;
 						//
 
 					}
-					else{ //si no encuentro la traducción imprimo un guión
-						salida = salida + "-" + separadores[k+1];
+					else{ //si no encuentro la traduccion imprimo un guion
+						salida = salida +  "-" + separadores[k+1];
 						fallos++; //y aumento fallos
 					}
 					i++;
 				}
-				//System.out.println(salida); //devuelvo el texto original traducido
+				System.out.println(salida); //devuelvo el texto original traducido
 			}
 			if(i!=0)
 				System.out.print((i-fallos)*100/i + "%"); // y los fallos cometidos en porcentaje -> Fallos * 100 dividido entre las veces que he hecho el bucle
