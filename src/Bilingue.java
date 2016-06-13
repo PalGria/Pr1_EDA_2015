@@ -90,21 +90,26 @@ public class Bilingue {
 			//luego dividiremos el archivo que nos pasan
 			lineas=leeTexto(args[1]);//separamos el texto con el separador
 			for(int j=0; lineas[j]!=null;j++){
+				salida = "";
 				traduc=lineas[j];
 				texto=traduc.split(separador); //separo el texto con el separador
 				separadores = traduc.split(separadorletras); //separo los separadores con un separador
 
 				for (int k = 0;k<texto.length;k++){  
 					if(dic.traduce1(texto[k],l)!=null){ // si no hay nulos
-						salida = salida + dic.traduce1(texto[k], l) + separadores[k+1] ;
+						salida = salida + separadores[k] + dic.traduce1(texto[k], l) ;
 						//
 
 					}
 					else{ //si no encuentro la traduccion imprimo un guion
-						salida = salida +  "-" + separadores[k+1];
+						salida = salida + separadores[k] +  "-" ;
 						fallos++; //y aumento fallos
 					}
+					if(k == texto.length -1 && separadores.length==k+2){
+						salida = salida + separadores[k+1];
+					}
 					i++;
+
 				}
 				System.out.println(salida); //devuelvo el texto original traducido
 			}
