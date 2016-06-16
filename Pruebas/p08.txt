@@ -1,0 +1,12 @@
+busqueda matter 20
+busqueda low 2
+busqueda toy 29
+busqueda optima matter 5
+busqueda optima low 4
+busqueda optima toy 3
+busqueda fallida -1
+busqueda optima fallida -1
+busqueda optima TEM(ultima palabra) 5
+busqueda TEM(ultima palabra) 52
+busqueda optima adress(primera palabra) -1
+busqueda adress(primera palabra) -1

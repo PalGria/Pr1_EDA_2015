@@ -166,7 +166,7 @@ private void ordenaDiccord() {//ordeno usando el algoritmo de burbuja
 public boolean borraPalabra(String s){
 	boolean encontredicc=false;
 	boolean encontrediccord=false;
-	for(int i=0;i<dicc.length;i++){
+	for(int i=0;i<dicc.length && dicc[i] != null;i++){
 		if (encontredicc == false && s.equalsIgnoreCase(dicc[i].getOrigen())){
 			dicc[i]=null;
 			for (int j = i; j<dicc.length -1; j++){
@@ -190,9 +190,9 @@ public boolean borraPalabra(String s){
 	return encontrediccord;
 }
 public int busqueda(String s){
-	for(int i=0;i<dicc.length;i++){
+	for(int i=0;i<dicc.length && dicc[i]!=null;i++){
 		if (s.equalsIgnoreCase(dicc[i].getOrigen())){
-			return i;
+			return i + 1 ;
 		}
 	}
 
@@ -201,8 +201,13 @@ public int busqueda(String s){
 public int busquedaOptima(String s){
 	//este método busca la cadena s en el diccionario y devuelve las comparaciones que tuvo que hacer (pero óptimamente)
 	//para este caso implementaré una búsqueda binaria, consistente en dividir el array en dos para averiguar en que zona está del array
-	
 	int centro, max=dicc.length-1, min=0, i=0;
+	for(int j =0; j<dicc.length; j++){
+		if(dicc[j] == null){
+			max = j;
+			break;
+		}
+	}
 	//centro será el centro de donde estoy buscando
 	//max es el rango máximo que estoy buscando
 	//min es el rango mínimo 
@@ -298,7 +303,7 @@ public void muestraDiccA(int i, int j, char l){
 		for (int k= 0 ; k<last && k<j ; k++){
 			System.out.print(dicc[k].getOrigen()+":");
 			if(dicc[k].getTraducciones(l)!=null){
-				System.out.println(dicc[k].getTraduccion(l));
+				System.out.println(dicc[k].getTraducciones(l));
 			}
 			else{
 				System.out.println();
@@ -310,7 +315,7 @@ public void muestraDiccA(int i, int j, char l){
 			if(diccord[k]!=null){
 				System.out.print(diccord[k].getOrigen()+":");
 				if(diccord[k].getTraducciones(l)!=null){
-					System.out.println(diccord[k].getTraduccion(l));
+					System.out.println(diccord[k].getTraducciones(l));
 				}
 				else{
 					System.out.println();
