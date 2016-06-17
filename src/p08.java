@@ -28,7 +28,7 @@ public class p08 {
 
 	    }
 	    else
-	        System.out.println("Forma uso: java p05 p05.dic");
+	        System.out.println("Forma uso: java p05 p06.dic");
 
 	}
 }

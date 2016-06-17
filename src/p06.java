@@ -39,7 +39,7 @@ public class p06 {
       diccio.muestraDiccA(0, 10, 'S'); 
     }
     else
-     System.out.println("Forma uso: java p05 p05.dic");
+     System.out.println("Forma uso: java p06 p06.dic");
     
   }
 }

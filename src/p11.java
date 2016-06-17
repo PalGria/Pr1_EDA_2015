@@ -20,7 +20,7 @@ public class p11 {
 
     }
     else
-     System.out.println("Forma uso: java p05 p05.dic");
+     System.out.println("Forma uso: java p05 p11.dic");
     
   }
 }
